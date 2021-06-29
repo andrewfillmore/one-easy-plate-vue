@@ -1,11 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link> |
+      <ul>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/about">About</router-link>
+        </li>
+        <li if="isLoggedIn()">
+          <router-link to="/logout">Logout</router-link>
+        </li>
+        <li v-if="!isLoggedIn()">
+          <router-link to="/login">Login</router-link>
+        </li>
+        <li v-if="!isLoggedIn()">
+          <router-link to="/signup">Signup</router-link>
+        </li>
+      </ul>
     </div>
     <router-view />
   </div>
