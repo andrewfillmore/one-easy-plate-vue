@@ -8,8 +8,20 @@
         </li>
       </ul>
       <div class="form-group">
-        <label>Name:</label>
-        <input type="text" class="form-control" v-model="newUserParams.name" />
+        <label>First Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          v-model="newUserParams.first_name"
+        />
+      </div>
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          v-model="newUserParams.last_name"
+        />
       </div>
       <div class="form-group">
         <label>Email:</label>

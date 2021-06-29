@@ -45,7 +45,7 @@ export default {
         password_confirmation: this.newUser.password_confirmation,
       };
       axios
-        .post("http://localhost:3000/products", params)
+        .post("/users", params)
         .then((response) => {
           console.log("users create", response);
           this.users.push(response.data);
