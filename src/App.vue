@@ -6,15 +6,21 @@
           <router-link to="/">Home</router-link>
         </li>
         <li>
+          <router-link to="/profile">Profile</router-link>
+        </li>
+        <li>
           <router-link to="/about">About</router-link>
         </li>
-        <li if="isLoggedIn()">
+
+        <li v-if="isLoggedIn()">
           <router-link to="/logout">Logout</router-link>
         </li>
+
         <li v-if="!isLoggedIn()">
           <router-link to="/login">Login</router-link>
         </li>
-        <li v-if="!isLoggedIn()">
+
+        <li v-if="!isLoggedIn()" class="cta">
           <router-link to="/signup">Signup</router-link>
         </li>
       </ul>
@@ -45,3 +51,19 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {};
+  },
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>
