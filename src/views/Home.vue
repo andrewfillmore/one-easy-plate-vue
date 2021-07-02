@@ -16,13 +16,19 @@
       </label>
       <br />
       <label>
-        Starch:
+        Carb:
         <input type="text" v-model="carb" />
       </label>
 
       <br />
       <button>Find Recipes</button>
-      <p>{{ recipes }}</p>
+      <div class="recipes-index">
+        <div v-for="recipe in recipes" v-bind:key="recipe.id">
+          {{ recipe.title }}
+          <br />
+          {{ recipe.cuisine }}
+        </div>
+      </div>
       <!-- <span v-if="$parent.getUserId() == user.id">
         <button v-on:click="destroyUser()">Delete Account</button>
       </span> -->
