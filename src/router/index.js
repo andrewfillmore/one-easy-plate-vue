@@ -5,7 +5,7 @@ import Profile from "../views/Profile.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
-
+import RecipesShow from "../views/Recipes/Show.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -33,6 +33,11 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout,
+  },
+  {
+    path: "/recipes/:id",
+    name: "recipes-show",
+    component: RecipesShow,
   },
   {
     path: "/about",

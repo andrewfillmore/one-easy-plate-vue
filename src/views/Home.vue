@@ -17,14 +17,15 @@
       <br />
       <label>
         Starch:
-        <input type="text" v-model="starch" />
+        <input type="text" v-model="carb" />
       </label>
 
       <br />
-      <input type="submit" value="Find Recipes" />
-      <span v-if="$parent.getUserId() == user.id">
+      <button>Find Recipes</button>
+      <p>{{ recipes }}</p>
+      <!-- <span v-if="$parent.getUserId() == user.id">
         <button v-on:click="destroyUser()">Delete Account</button>
-      </span>
+      </span> -->
     </form>
   </div>
 </template>
@@ -32,60 +33,31 @@
 <style></style>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
   data: function () {
     return {
       message: "Welcome to One Easy Plate!",
+      recipes: [],
       protein: "",
+      carb: "",
       veggie: "",
-      starch: "",
-      recipes: {},
     };
   },
-  created: function () {
-
-  },
+  created: function () {},
   methods: {
-    updateUser: function () {
+    findRecipes: function () {
       axios
-        .patch(`/users/${this.$parent.getUserId()}`, this.editUserParams)
+        .get(`/recipes?query=${this.protein},${this.veggie},${this.carb}`)
         .then((response) => {
-          console.log(response.data);
-          this.user = response.data;
-          this.editUserParams = "";
+          console.log("Recipe Object", response.data);
+          this.recipes = response.data;
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
           console.log(error.response.data.errors);
         });
     },
-    destroyUser: function () {
-      if (confirm("Are you sure you want to delete this User?")) {
-        axios.delete(`/users/${this.user.id}`).then((response) => {
-          console.log(response.data);
-          this.$router.push("/");
-        });
-      }
-    },
   },
-//   methods: {
-
-      findRecipe: function () {
-        query = this.protein +","+ this.veggie +","+ this.starch
-        axios
-          .get(`/recipes/${this.query}`, query )
-          .then((response) => {
-          console.log("Recipe Object", response.data);
-          this.recipes = response.data;
-          })
-          .catch((error) => {
-            this.errors = error.response.data.errors;
-            console.log(error.response.data.errors);
-        });
-    },
-  },
-
-},
-// };
+};
 </script>

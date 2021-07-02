@@ -1,9 +1,9 @@
 <template>
   <div class="users-show">
-    <!-- <p>
+    <p>
       Current logged in user: {{ typeof $parent.getUserId() }}
       {{ $parent.getUserId() }}
-    </p> -->
+    </p>
     <h1>{{ user.first_name }}'s Profile Page</h1>
     <p>{{ user.first_name }} {{ user.last_name }}</p>
     <p>{{ user.email }}</p>
