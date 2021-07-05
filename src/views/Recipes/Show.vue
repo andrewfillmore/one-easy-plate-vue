@@ -17,7 +17,7 @@ export default {
     };
   },
   created: function () {
-    axios.get(`/recipes/${this.$route.params.id}`).then((response) => {
+    axios.get(`/recipes/${this.recipe.id}`).then((response) => {
       console.log("Recipe object", response.data);
       this.recipe = response.data;
     });

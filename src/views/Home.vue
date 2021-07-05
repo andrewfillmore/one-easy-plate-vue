@@ -27,6 +27,7 @@
           {{ recipe.title }}
           <br />
           {{ recipe.cuisine }}
+          <button v-on:click="showRecipe(recipe)">View Recipe</button>
         </div>
       </div>
       <!-- <span v-if="$parent.getUserId() == user.id">
@@ -48,6 +49,8 @@ export default {
       protein: "",
       carb: "",
       veggie: "",
+      currentRecipe: {},
+      recipe: {},
     };
   },
   created: function () {},
@@ -63,6 +66,11 @@ export default {
           this.errors = error.response.data.errors;
           console.log(error.response.data.errors);
         });
+    },
+    showRecipe: function (recipe) {
+      console.log(recipe);
+      this.currentRecipe = this.recipe.id;
+      this.$router.push("/recipes/show");
     },
   },
 };
