@@ -5,7 +5,7 @@
 
       <router-link to="/profile">Profile</router-link> |
 
-      <router-link to="/favorites">Favorites</router-link> |
+      <router-link to="/favorites">My Favorites</router-link> |
 
       <router-link to="/about">About</router-link> |
 

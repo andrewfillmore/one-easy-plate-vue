@@ -1,22 +1,20 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <h1>Choose Your Protein</h1>
-    <h1>Choose Your Vegetable</h1>
-    <h1>Choose Your Starch</h1>
+
     <form v-on:submit.prevent="findRecipes()">
       <label>
-        Protein:
+        Chooses a Protein:
         <input type="text" v-model="protein" />
       </label>
       <br />
       <label>
-        Veggie:
+        Choose a Veggie:
         <input type="text" v-model="veggie" />
       </label>
       <br />
       <label>
-        Carb:
+        Choose a Carb:
         <input type="text" v-model="carb" />
       </label>
 
