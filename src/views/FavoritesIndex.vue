@@ -1,10 +1,12 @@
 <template>
   <div class="favorites-index">
     <div v-for="favorite in favorites" v-bind:key="favorite.id">
-      <h2>{{ favorite.title }}</h2>
-      <img :src="favorite.image" alt="" />
+      <h2>{{ favorite.recipe.title }}</h2>
+      <img :src="favorite.recipe.image" alt="" />
       <p>{{ favorite.comments }}</p>
-      <button v-on:click="showFavorite(favorite)">Go to Recipe</button>
+      <router-link :to="`/recipes/${favorite.spoonacular_api_recipe_id}`"
+        >Go To Recipe</router-link
+      >
       <button v-on:click="destroyFavorite(favorite)">Delete Recipe</button>
     </div>
   </div>
@@ -16,6 +18,8 @@ export default {
   data: function () {
     return {
       favorites: [],
+      recipe: {},
+      favorite: [],
     };
   },
   created: function () {
@@ -25,17 +29,12 @@ export default {
     });
   },
   methods: {
-    showFavorite: function () {
-      this.$router.push("/favorites/${favorite.id}");
-    },
     destroyFavorite: function (favorite) {
       if (confirm("Are you sure you want to delete this Recipe?")) {
-        axios
-          .delete(`/favorites/${this.favorite.id}`, favorite)
-          .then((response) => {
-            console.log(response.data);
-            this.$router.push("/");
-          });
+        axios.delete(`/favorites/${favorite.id}`, favorite).then((response) => {
+          console.log(response.data);
+          this.$router.push("/");
+        });
       }
     },
   },

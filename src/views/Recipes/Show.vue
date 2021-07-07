@@ -13,18 +13,25 @@
         {{ extendedIngredient.unit }} {{ extendedIngredient.name }}
       </p>
     </div>
+    <h3>Summary</h3>
+    <div>
+      <p>{{ recipe.summary }}</p>
+    </div>
     <h3>Instructions</h3>
     <div>
       <p>{{ recipe.instructions }}</p>
     </div>
+    <!-- <h3>Comments</h3>
+    <div>
+      <p v-for="comeents in favorite.comments"></p>
+    </div> -->
 
     <form v-on:submit.prevent="addFavorite()">
-      <h1>Comments</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Comments:</label>
+        <label>Add Comments: </label>
         <input type="text" v-model="comments" />
       </div>
       <input type="submit" value="Add Recipe to Favorites" />
@@ -40,6 +47,7 @@ export default {
       recipe: {},
       comments: "",
       errors: [],
+      // favorites: {},
     };
   },
   created: function () {
@@ -47,6 +55,10 @@ export default {
       console.log("Recipe object", response.data);
       this.recipe = response.data;
     });
+    // axios.get("/favorites").then((response) => {
+    //   console.log("Favorites Array", response.data);
+    //   this.favorites = response.data;
+    // });
   },
   methods: {
     addFavorite: function () {

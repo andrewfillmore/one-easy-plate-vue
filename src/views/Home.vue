@@ -22,9 +22,15 @@
       <button>Find Recipes</button>
       <div class="recipes-index">
         <div v-for="recipe in recipes" v-bind:key="recipe.id">
-          {{ recipe.title }}
+          <h2>{{ recipe.title }}</h2>
           <br />
-          {{ recipe.cuisine }}
+          <h2>{{ recipe.servings }}</h2>
+          <br />
+          <h2>Prep Time: {{ recipe.readyInMinutes }} minutes</h2>
+          <br />
+          <img :src="recipe.image" alt="" />
+          <br />
+
           <router-link :to="`/recipes/${recipe.id}`">View Recipe</router-link>
         </div>
       </div>
