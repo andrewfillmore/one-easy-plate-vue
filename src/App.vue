@@ -3,14 +3,12 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
 
-      <router-link to="/profile">Profile</router-link> |
-
-      <router-link to="/favorites">My Favorites</router-link> |
-
       <router-link to="/about">About</router-link> |
 
       <li v-if="isLoggedIn()">
         <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> |
+        <router-link to="/favorites">My Favorites</router-link> |
+        <router-link to="/profile">Profile</router-link> |
       </li>
 
       <li v-if="!isLoggedIn()">
