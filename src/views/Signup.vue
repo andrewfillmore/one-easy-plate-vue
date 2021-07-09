@@ -1,54 +1,128 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors" v-bind:key="error">
-          {{ error }}
-        </li>
-      </ul>
-      <div class="form-group">
-        <label>First Name:</label>
-        <input
-          type="text"
-          class="form-control"
-          v-model="newUserParams.first_name"
-        />
+    <section class="bg-alt">
+      <div class="container">
+        <h2 class="text-center pb-2"></h2>
+        <div class="row wow slideInUp">
+          <div class="col-lg-6 col-12 pb-3">
+            <div class="card h-100">
+              <div class="card-img-top"></div>
+              <div class="card-body">
+                <h1>Sign-up</h1>
+
+                <form v-on:submit.prevent="submit()" role="form">
+                  <ul>
+                    <li
+                      class="text-danger"
+                      v-for="error in errors"
+                      v-bind:key="error"
+                    >
+                      {{ error }}
+                    </li>
+                  </ul>
+                  <div class="form-group">
+                    <label
+                      for="input2EmailForm"
+                      class="sr-only form-control-label"
+                      >first name</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="newUserParams.first_name"
+                        class="form-control"
+                        id="input2EmailForm"
+                        placeholder="first name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="input2EmailForm"
+                      class="sr-only form-control-label"
+                      >last name</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="newUserParams.last_name"
+                        class="form-control"
+                        id="input2EmailForm"
+                        placeholder="last name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="input2EmailForm"
+                      class="sr-only form-control-label"
+                      >email</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="newUserParams.email"
+                        class="form-control"
+                        id="input2EmailForm"
+                        placeholder="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="input2PasswordForm"
+                      class="sr-only form-control-label"
+                      >password</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="newUserParams.password"
+                        class="form-control"
+                        id="input2PasswordForm"
+                        placeholder="password"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="input2Password2Form"
+                      class="sr-only form-control-label"
+                      >verify</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="newUserParams.password_confirmation"
+                        class="form-control"
+                        id="input2Password2Form"
+                        placeholder="verify password"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="mx-auto col-sm-10 pb-3 pt-2">
+                      <button
+                        type="submit"
+                        class="btn btn-outline-secondary btn-lg btn-block"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
       </div>
-      <div class="form-group">
-        <label>Last Name:</label>
-        <input
-          type="text"
-          class="form-control"
-          v-model="newUserParams.last_name"
-        />
-      </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input
-          type="email"
-          class="form-control"
-          v-model="newUserParams.email"
-        />
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input
-          type="password"
-          class="form-control"
-          v-model="newUserParams.password"
-        />
-      </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input
-          type="password"
-          class="form-control"
-          v-model="newUserParams.password_confirmation"
-        />
-      </div>
-      <input type="submit" class="btn btn-primary" value="Submit" />
-    </form>
+    </section>
   </div>
 </template>
 

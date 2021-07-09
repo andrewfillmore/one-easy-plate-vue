@@ -1,13 +1,36 @@
 <template>
   <div class="favorites-index">
-    <div v-for="favorite in favorites" v-bind:key="favorite.id">
-      <h2>{{ favorite.recipe.title }}</h2>
-      <img :src="favorite.recipe.image" alt="" />
-      <p>{{ favorite.comments }}</p>
-      <router-link :to="`/recipes/${favorite.spoonacular_api_recipe_id}`"
-        >Go To Recipe</router-link
-      >
-      <button v-on:click="destroyFavorite(favorite)">Delete Recipe</button>
+    <div class="container py-5">
+      <div class="row">
+        <div
+          class="col-sm-4 col-6 media py-3"
+          v-for="favorite in favorites"
+          v-bind:key="favorite.id"
+        >
+          <div class="card card-default text-center">
+            <div class="card-img-top card-zoom">
+              <router-link
+                :to="`/recipes/${favorite.spoonacular_api_recipe_id}`"
+                ><img
+                  class="img-fluid"
+                  :src="favorite.recipe.image"
+                  alt="Card image"
+              /></router-link>
+            </div>
+            <div class="card-body">
+              <h6>{{ favorite.recipe.title }}</h6>
+              <p class="card-text">{{ favorite.comments }}</p>
+              <button
+                class="btn btn-secondary"
+                v-on:click="destroyFavorite(favorite)"
+              >
+                Delete Recipe
+              </button>
+              <button class="btn btn-secondary">Recipe Saved!</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,7 +56,11 @@ export default {
       if (confirm("Are you sure you want to delete this Recipe?")) {
         axios.delete(`/favorites/${favorite.id}`, favorite).then((response) => {
           console.log(response.data);
-          this.$router.push("/");
+          for (var i = 0; i < this.favorites.length; i++) {
+            if (this.favorites[i] === favorite) {
+              this.favorites.splice(i, 1);
+            }
+          }
         });
       }
     },

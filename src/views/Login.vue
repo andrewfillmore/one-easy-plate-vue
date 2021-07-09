@@ -1,20 +1,73 @@
 <template>
   <div class="login">
-    <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="email" />
+    <section class="bg-alt">
+      <div class="container">
+        <h2 class="text-center pb-2"></h2>
+        <div class="row wow slideInUp">
+          <div class="col-lg-6 col-12 pb-3">
+            <div class="card h-100">
+              <div class="card-img-top"></div>
+              <div class="card-body">
+                <h1>Login</h1>
+                <form v-on:submit.prevent="submit()" role="form">
+                  <ul>
+                    <li v-for="error in errors" v-bind:key="error">
+                      {{ error }}
+                    </li>
+                  </ul>
+                  <div class="form-group">
+                    <label
+                      for="inputEmailForm"
+                      class="sr-only form-control-label"
+                      >Email</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="email"
+                        class="form-control"
+                        id="inputEmailForm"
+                        placeholder="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="inputPasswordForm"
+                      class="sr-only form-control-label"
+                      >Password</label
+                    >
+                    <div class="mx-auto col-sm-10">
+                      <input
+                        type="text"
+                        v-model="password"
+                        class="form-control"
+                        id="inputPasswordForm"
+                        placeholder="password"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group"></div>
+                  <div class="form-group">
+                    <div class="mx-auto col-sm-10 pb-3 pt-2">
+                      <button
+                        type="submit"
+                        class="btn btn-outline-secondary btn-lg btn-block"
+                      >
+                        Sign-in
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
       </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="password" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+    </section>
   </div>
 </template>
 
@@ -42,7 +95,7 @@ export default {
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("user_id", response.data.user_id);
-          this.$router.push("/");
+          this.$router.push("/about");
         })
         .catch((error) => {
           console.log(error.response);

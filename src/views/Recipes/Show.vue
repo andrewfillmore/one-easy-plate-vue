@@ -1,7 +1,8 @@
 <template>
   <div class="recipes-show">
     <h2>{{ recipe.title }}</h2>
-    <button>Saved!</button>
+    <h4>{{ recipe.servings }} servings</h4>
+
     <h2>Prep Time: {{ recipe.readyInMinutes }} minutes</h2>
     <img :src="recipe.image" alt="" />
     <h3>Ingredients:</h3>
