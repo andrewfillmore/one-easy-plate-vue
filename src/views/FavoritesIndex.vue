@@ -1,14 +1,32 @@
 <template>
   <div class="favorites-index">
+    <div class="row my-4 pt-1">
+      <div class="col-12 col-md-4 ml-md-auto ml-auto">
+        <div class="input-group add-on">
+          <input
+            type="text"
+            class="form-control"
+            v-model="searchTerm"
+            list="titles"
+            placeholder=" "
+          />
+          <div class="input-group-btn">
+            <button
+              class="
+                btn btn-secondary
+                border-left-0 border-right-0 border-top-0
+              "
+              type="submit"
+            >
+              <i class="ion-ios-search-strong"></i>
+            </button>
+          </div>
+        </div>
+        <small class="ml-2">search your favorites</small>
+      </div>
+    </div>
     <div class="container py-5">
       <div class="row">
-        <input
-          type="text"
-          v-model="searchTerm"
-          list="titles"
-          placeholder="Search Favorites"
-        />
-
         <datalist id="titles">
           <option v-for="favorite in favorites" v-bind:key="favorite.id">
             {{ favorite.recipe.title }}
@@ -32,13 +50,27 @@
             <div class="card-body">
               <h6>{{ favorite.recipe.title }}</h6>
               <p class="card-text">{{ favorite.comments }}</p>
-              <button
-                class="btn btn-secondary"
-                v-on:click="destroyFavorite(favorite)"
+              <hr class="accent my-4" />
+              <div
+                class="
+                  d-flex
+                  justify-content-center
+                  flex-column flex-sm-row
+                  mt-2
+                "
               >
-                Delete Recipe
-              </button>
-              <button class="btn btn-secondary">Recipe Saved!</button>
+                <button v-on:click="destroyFavorite(favorite)" class="btn mr-1">
+                  Delete Recipe
+                </button>
+              </div>
+              <!-- <h5 class="mt-2">
+                <a
+                  href=""
+                  v-on:click="destroyFavorite(favorite)"
+                  class="badge badge-pill badge-warning"
+                  >Delete Recipe</a
+                >
+              </h5> -->
             </div>
           </div>
         </div>
