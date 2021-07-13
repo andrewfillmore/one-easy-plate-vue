@@ -100,7 +100,7 @@
               <div class="card-img-top"></div>
               <div class="card-body">
                 <a href=""><i class="icon-lg ion-ios-telephone-outline"></i></a>
-                <h3 class="card-title">Consultation</h3>
+                <h3 class="card-title">Consult</h3>
                 <p>503-804-5099</p>
               </div>
             </div>

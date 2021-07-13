@@ -57,21 +57,22 @@
             <div class="col-xl-5 col-lg-4 col-md-3"></div>
             <div class="col-xl-7 col-lg-8 col-md-9 bg-white wow fadeIn">
               <div class="p-4">
-                <h1 class="pt-2">Simple Recipes for Healthy Meals</h1>
+                <h1 class="pt-2">Simple Recipes + Healthy Meals</h1>
               </div>
 
               <div class="p-3">
                 <p class="lead pt-2 pr-2">
-                  We know it can be overwhelming to plan and cook healthy meals
-                  throughout the week. Our goal is to give you a complete meal
-                  recipe based on ingredients you have at home. Just choose a
-                  Protein, a Vegetable, and a Carbohydrate, and we'll find you
-                  deliciouos, simple recipes to make in no time. Double the
-                  recipe to freeze and eat later, or eat as leftovers through
-                  the week.
+                  Choose a Protein, a Vegetable, and a Carbohydrate:
                 </p>
                 <p class="lead pt-2 pr-2">
-                  To get started, sign up or login below. Enjoy!
+                  We'll give you one easy plate to plan, prepare, and enjoy.
+                  Just three simple steps for tasty and nutritious recipes you
+                  can make in no time.
+                </p>
+
+                <p class="lead pt-2 pr-2">
+                  To get started, sign up or login here: <br />
+                  bon appetit!
                 </p>
                 <!-- <br /> -->
                 <div class="row pt-2">
@@ -82,6 +83,7 @@
                     >
                       Sign Up
                     </router-link>
+
                     <router-link
                       :to="`/login/`"
                       class="btn btn-outline-secondary btn-lg"
@@ -91,6 +93,7 @@
                       Login
                     </router-link>
                   </div>
+
                   <div class="col-md-12 pt-2 pb-2">
                     <hr />
                   </div>
