@@ -2,9 +2,21 @@
   <div class="favorites-index">
     <div class="container py-5">
       <div class="row">
+        <input
+          type="text"
+          v-model="searchTerm"
+          list="titles"
+          placeholder="Search Favorites"
+        />
+
+        <datalist id="titles">
+          <option v-for="favorite in favorites" v-bind:key="favorite.id">
+            {{ favorite.recipe.title }}
+          </option>
+        </datalist>
         <div
           class="col-sm-4 col-6 media py-3"
-          v-for="favorite in favorites"
+          v-for="favorite in filterBy(favorites, searchTerm)"
           v-bind:key="favorite.id"
         >
           <div class="card card-default text-center">
@@ -37,12 +49,16 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       favorites: [],
       recipe: {},
       favorite: [],
+      searchTerm: "",
     };
   },
   created: function () {

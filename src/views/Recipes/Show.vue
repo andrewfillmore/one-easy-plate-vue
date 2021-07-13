@@ -17,16 +17,15 @@
     </div>
     <h3>Summary</h3>
     <div>
-      <p>{{ recipe.summary }}</p>
+      <p><span v-html="recipe.summary"></span></p>
     </div>
     <h3>Instructions</h3>
     <div>
-      <p>{{ recipe.instructions }}</p>
+      <p><span v-html="recipe.instructions"></span></p>
     </div>
-    <!-- <h3>Comments</h3>
-    <div>
-      <p v-for="comeents in favorite.comments"></p>
-    </div> -->
+    <!-- <div v-for="comment in favorite.comments">
+     <p> {{comment}}</p>
+   </div> -->
 
     <form v-on:submit.prevent="addFavorite()">
       <ul>
@@ -49,7 +48,8 @@ export default {
       recipe: {},
       comments: "",
       errors: [],
-      // favorites: {},
+      favorites: [],
+      favorite: {},
     };
   },
   created: function () {
@@ -57,10 +57,16 @@ export default {
       console.log("Recipe object", response.data);
       this.recipe = response.data;
     });
-    // axios.get("/favorites").then((response) => {
-    //   console.log("Favorites Array", response.data);
-    //   this.favorites = response.data;
-    // });
+    axios.get("/favorites").then((response) => {
+      console.log("Favorites Array", response.data);
+      this.favorites = response.data;
+    });
+    // for (var i = 0; i < this.favorites.length; i++) {
+    //   if (this.favorites[i].recipe == this.recipe) {
+    //     this.favorite = this.favorites[i];
+    //     console.log(this.favorite);
+    //   }
+    // }
   },
   methods: {
     addFavorite: function () {
