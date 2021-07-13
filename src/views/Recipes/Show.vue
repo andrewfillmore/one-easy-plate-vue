@@ -27,7 +27,7 @@
      <p> {{comment}}</p>
    </div> -->
 
-    <form v-on:submit.prevent="addFavorite()">
+    <form v-if="!recipe.already_favorite" v-on:submit.prevent="addFavorite()">
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -57,16 +57,6 @@ export default {
       console.log("Recipe object", response.data);
       this.recipe = response.data;
     });
-    axios.get("/favorites").then((response) => {
-      console.log("Favorites Array", response.data);
-      this.favorites = response.data;
-    });
-    // for (var i = 0; i < this.favorites.length; i++) {
-    //   if (this.favorites[i].recipe == this.recipe) {
-    //     this.favorite = this.favorites[i];
-    //     console.log(this.favorite);
-    //   }
-    // }
   },
   methods: {
     addFavorite: function () {

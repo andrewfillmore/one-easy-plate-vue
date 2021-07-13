@@ -72,7 +72,6 @@
 
                 <p class="lead pt-2 pr-2">
                   To get started, sign up or login here: <br />
-                  bon appetit!
                 </p>
                 <!-- <br /> -->
                 <div class="row pt-2">
