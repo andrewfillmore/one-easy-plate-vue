@@ -31,7 +31,7 @@
                         class="form-control"
                         v-model="protein"
                         id="inputName"
-                        placeholder="beef? chicken? fish?"
+                        placeholder=""
                       />
                     </div>
                     <div class="form-group">
@@ -41,7 +41,7 @@
                         class="form-control"
                         v-model="veggie"
                         id="inputName"
-                        placeholder="broccoli?"
+                        placeholder=""
                       />
                     </div>
                     <div class="form-group">
@@ -51,7 +51,7 @@
                         class="form-control"
                         v-model="carb"
                         id="inputName"
-                        placeholder="rice? pasta? potato?"
+                        placeholder=""
                       />
                     </div>
 
@@ -88,7 +88,7 @@
               </div>
               <div class="card-body">
                 <h6>{{ recipe.title }}</h6>
-                <h6>{{ recipe.usedIngredients["originalName"] }}</h6>
+
                 <p class="card-text"></p>
                 <hr class="accent my-4" />
                 <div
@@ -113,44 +113,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <div class="container pb-2">
-      <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-5 pt-2 pb-2">
-          <div class="recipes-index">
-            <div v-for="recipe in recipes" v-bind:key="recipe.id">
-              <h2>{{ recipe.title }}</h2>
-              <br />
-
-              <img :src="recipe.image" alt="" />
-              <br />
-
-              <router-link :to="`/recipes/${recipe.id}`"
-                >View Recipe</router-link
-              >
-            </div>
-          </div>
-        </div>
-        <div
-          class="
-            col-xl-4
-            ml-xl-auto
-            col-lg-4
-            ml-lg-auto
-            col-md-5
-            ml-md-auto
-            pt-2
-            pb-2
-          "
-        >
-          <blockquote class="blockquote wow fadeIn">
-            <h3 class="text-right pt-2">
-              Founded by people that love code &amp; design.
-            </h3>
-          </blockquote>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 <script>

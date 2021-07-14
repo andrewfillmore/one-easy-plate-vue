@@ -14,7 +14,7 @@
               data-toggle="collapse"
             >
               <a href="" data-target="#edit" data-toggle="tab" class="nav-link"
-                >Edit</a
+                >Click to Edit Profile</a
               >
             </li>
           </ul>
@@ -25,47 +25,7 @@
               </div>
               <!--/row-->
             </div>
-            <div class="tab-pane py-2" id="messages">
-              <div class="alert alert-info alert-dismissable">
-                <a class="panel-close close" data-dismiss="alert">&#xD7;</a>
-                This is an <span class="font-weight-bold">.alert</span>. Use
-                this to show important messages to the user.
-              </div>
-              <table class="table table-hover table-striped">
-                <tbody>
-                  <tr>
-                    <td>
-                      <span class="float-right font-weight-bold"
-                        >3 hrs ago</span
-                      >
-                      Here is your a link to the latest summary report from
-                      the..
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="float-right font-weight-bold"
-                        >Yesterday</span
-                      >
-                      There has been a request on your account since that was..
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="float-right font-weight-bold">9/10</span>
-                      Porttitor vitae ultrices quis, dapibus id dolor. Morbi
-                      venenatis lacinia rhoncus.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="float-right font-weight-bold">9/4</span>
-                      Vestibulum tincidunt ullamcorper eros eget luctus.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+
             <div class="tab-pane py-2" id="edit">
               <form v-on:submit.prevent="updateUser()" role="form">
                 <div class="form-group row">
@@ -145,8 +105,9 @@
                         type="reset"
                         class="btn btn-secondary"
                         value="Delete Account"
-                      />
-                    </span>
+                      /> </span
+                    >&nbsp;&nbsp;&nbsp;
+
                     <input
                       type="submit"
                       class="btn btn-primary"
@@ -159,13 +120,16 @@
           </div>
         </div>
         <div class="col-lg-3 order-lg-1 text-center">
-          <table class="table table-sm small text-left">
+          <table class="table table-lg large text-left">
+            <br />
+            <br />
+            <br />
+            <br />
             <tbody>
               <tr>
                 <td class="text-uppercase">
                   {{ user.first_name }} {{ user.last_name }}
                 </td>
-                <td></td>
               </tr>
 
               <tr>

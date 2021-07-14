@@ -16,8 +16,8 @@
                   class="text-typing line-2 wow fadeIn"
                   data-wow-delay="1.4s"
                 >
-                  to
-                </span>
+                  this is </span
+                ><br />
                 <span
                   class="text-typing line-3 wow fadeIn text-highlight"
                   data-wow-delay="1.6s"
@@ -42,67 +42,72 @@
                 <!-- {{ message }} -->
               </h3>
               <br />
-              <h6 class="text-right">
-                <a href="" class="text-muted link small">We made it easy</a>
-              </h6>
+              <h3 class="text-right">
+                <!-- <a href="" class="text-muted link small"
+                  >3 ingredients to a healthy meal</a
+                > -->
+              </h3>
             </blockquote>
           </div>
         </div>
       </div>
     </div>
-    <body class="preload">
-      <header id="first" class="bg-image-jungle bg-fixed bg-cover">
-        <div class="header-content container py-3">
-          <div class="row vcenter">
-            <div class="col-xl-5 col-lg-4 col-md-3"></div>
-            <div class="col-xl-7 col-lg-8 col-md-9 bg-white wow fadeIn">
-              <div class="p-4">
-                <h1 class="pt-2">Simple Recipes + Healthy Meals</h1>
-              </div>
+    <!-- <body class="preload"> -->
+    <header id="first" class="bg-image-jungle bg-fixed bg-cover">
+      <div class="header-content container py-3">
+        <div class="row vcenter">
+          <div class="col-xl-5 col-lg-4 col-md-3"></div>
+          <div
+            class="col-xl-7 col-lg-8 col-md-9 bg-white wow fadeIn"
+            style="border-radius: 15px"
+          >
+            <div class="p-4">
+              <h1 class="pt-2">Simple Recipes + Healthy Meals</h1>
+            </div>
 
-              <div class="p-3">
-                <p class="lead pt-2 pr-2">
-                  Choose a Protein, a Vegetable, and a Carbohydrate:
-                </p>
-                <p class="lead pt-2 pr-2">
-                  We'll give you one easy plate to plan, prepare, and enjoy.
-                  Just three simple steps for tasty and nutritious recipes you
-                  can make in no time.
-                </p>
+            <div class="p-3">
+              <p class="lead pt-2 pr-2">
+                Choose a Protein, a Vegetable, and a Carbohydrate:
+              </p>
+              <p class="lead pt-2 pr-2">
+                We'll give you one easy plate to plan, prepare, and enjoy. Just
+                three simple steps for tasty and nutritious recipes you can make
+                in no time.
+              </p>
 
-                <p class="lead pt-2 pr-2">
-                  To get started, sign up or login here: <br />
-                </p>
-                <!-- <br /> -->
-                <div class="row pt-2">
-                  <div class="col-md-12 pt-2 pb-2">
-                    <router-link
-                      :to="`/signup/`"
-                      class="btn btn-outline-secondary btn-lg"
-                    >
-                      Sign Up
-                    </router-link>
+              <p class="lead pt-2 pr-2">
+                To get started, sign up or login here: <br />
+              </p>
+              <!-- <br /> -->
+              <div class="row pt-2">
+                <div class="col-md-12 pt-2 pb-2">
+                  <router-link
+                    :to="`/signup/`"
+                    class="btn btn-outline-secondary btn-lg"
+                  >
+                    Sign Up </router-link
+                  >&nbsp;&nbsp;
 
-                    <router-link
-                      :to="`/login/`"
-                      class="btn btn-outline-secondary btn-lg"
-                      data-toggle="modal"
-                      data-target="#contactModal"
-                    >
-                      Login
-                    </router-link>
-                  </div>
+                  <router-link
+                    :to="`/login/`"
+                    class="btn btn-outline-secondary btn-lg"
+                    data-toggle="modal"
+                    data-target="#contactModal"
+                  >
+                    Login
+                  </router-link>
+                </div>
 
-                  <div class="col-md-12 pt-2 pb-2">
-                    <hr />
-                  </div>
+                <div class="col-md-12 pt-2 pb-2">
+                  <hr />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </header>
-    </body>
+      </div>
+    </header>
+    <!-- </body> -->
   </div>
 </template>
 

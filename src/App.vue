@@ -25,10 +25,11 @@
         <span></span>
       </a>
       <!-- text brand or logo image goes here -->
+      <img src="/assets/images/bok.jpg" alt="" height="70" />
       <router-link
         class="navbar-brand page-scroll text-uppercase wide-space link"
         to="/"
-        >One Easy Plate</router-link
+        >one easy plate</router-link
       >
       <button
         class="navbar-toggler collapsed border-0"
@@ -78,8 +79,31 @@
     <!-- /navbar -->
 
     <router-view />
-
-    <section class="bg-alt">
+    <footer id="footer" class="pt-5" style="background-color: #ededed">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-sm-3 column">
+            <h6 class="text-uppercase" style="color: black">
+              Andrew Fillmore Studio
+            </h6>
+            <ul class="list-unstyled" style="color: black">
+              <li>
+                <a href="mailto: andrew.fillmore@gmail.com" style="color: black"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="./about.html" style="color: black">Our Mission</a>
+              </li>
+              <li>
+                <a href="./legal.html" style="color: black">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- <section class="bg-alt">
       <div class="container wow fadeInUp">
         <h2 class="pb-2">Andrew Fillmore Studio</h2>
         <div class="row">
@@ -118,7 +142,7 @@
         </div>
         <hr />
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
