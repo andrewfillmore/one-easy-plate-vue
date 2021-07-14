@@ -2,6 +2,7 @@
   <div class="about">
     <section id="aboutheader" class="bg-image2">
       <div class="container pt-2">
+        <br />
         <div class="row">
           <div
             class="
@@ -70,6 +71,9 @@
           </div>
           <div class="col-xl-4 col-lg-4 col-md-3"></div>
         </div>
+        <br />
+        <br />
+        <br />
       </div>
     </section>
     <section class="bg-alt">
