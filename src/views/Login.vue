@@ -40,7 +40,7 @@
                     >
                     <div class="mx-auto col-sm-10">
                       <input
-                        type="text"
+                        type="password"
                         v-model="password"
                         class="form-control"
                         id="inputPasswordForm"

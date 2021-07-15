@@ -79,7 +79,7 @@
                     >
                     <div class="mx-auto col-sm-10">
                       <input
-                        type="text"
+                        type="password"
                         v-model="newUserParams.password"
                         class="form-control"
                         id="input2PasswordForm"
@@ -96,7 +96,7 @@
                     >
                     <div class="mx-auto col-sm-10">
                       <input
-                        type="text"
+                        type="password"
                         v-model="newUserParams.password_confirmation"
                         class="form-control"
                         id="input2Password2Form"
