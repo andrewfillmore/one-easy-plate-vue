@@ -71,7 +71,7 @@
           </div>
           <div class="col-xl-4 col-lg-4 col-md-3"></div>
         </div>
-        <br />
+        <!-- <br /> -->
       </div>
     </section>
     <section class="bg-alt">
