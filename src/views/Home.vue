@@ -101,6 +101,10 @@
                 <div class="col-md-12 pt-2 pb-2">
                   <hr />
                 </div>
+                <p class="lead pt-1 pr-1" style="font-size: 0.9em">
+                  To demo this site - Login: andrew@gmail.com, Password:
+                  password<br />
+                </p>
               </div>
             </div>
           </div>
